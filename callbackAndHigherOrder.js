@@ -5,7 +5,9 @@
   Invoke the callback, passing in the product of the two numbers multiplied as the argument. 
 */
 
-// CODE HERE
+function multiply(x, y, callback) {
+  
+}
 
 
 // UNCOMMENT THE FUNCTION CALL BELOW
