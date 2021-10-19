@@ -161,19 +161,14 @@ function uniq (array, callback) {
   For each name in the array, invoke the callback and pass in the name and the name's index as arguments.
 */
 
-function printEach(item, index) {
-  console.log (`The item at ${[index]} is ${[item]}.`)
-}
-
 
 function each(array, callback) {
-  let item = 'mane'
-  let index = 'wassap'
-  callback(item, index)
+for (i = 0; i < array.length; i++) {
+    let res = array[i];
+    let index = array.indexOf(array[i])
+    callback(res, index)
+  }
 }
-
-// each (['John', 'Jill', "Sally", 'Chad', 'Chris'], printEach)
-
 
 /*
   Invoke the each function, passing in the names array and a callback function.
@@ -182,8 +177,11 @@ function each(array, callback) {
   'The item at index [INDEXPARAM] is [ITEMPARAM].'
 */
 
-// CODE HERE
+function printEach(item, place) {
+  console.log(`The item at index ${place} is ${item}.`)
+}
 
+each (['John', 'Jill', "Sally", 'Chad', 'Chris'], printEach)
 
 ////////// PROBLEM 7 //////////
 
@@ -215,8 +213,23 @@ var users = [
 ]
 // Do not edit the code above.
 
-// CODE HERE 
+function printInfo (arg) {
+  if (arg !== 0) {
+    console.log(`The user with the id has the email of ${arg.email}, the name of ${arg.name} and the address of ${arg.address}.`)
+  } else {
+    console.log('Try again')
+  }
+}
 
+function getUserById(array, ID, callback) {
+  let res = 0;
+  if (array.some(array => array['id'] === ID)) {
+    res = array.find(array => array['id'] === ID)
+  }
+  callback(res)
+}
+
+// getUserById (users, '16t', printInfo)
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
