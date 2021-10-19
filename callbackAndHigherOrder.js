@@ -5,20 +5,16 @@
   Invoke the callback, passing in the product of the two numbers multiplied as the argument. 
 */
 
-function multiply(x, y, callback) {
-  
+function displayAnswer(arg) {
+  console.log('The answer is ' + arg)
 }
 
+function multiply(n1, n2, myCallback) {
+  let product = n1 * n2;
+  myCallback(product);
+}
 
-// UNCOMMENT THE FUNCTION CALL BELOW
-// RUN THIS FILE WITH NODE
-// CHECK YOUR ANSWER
-
-// multiply(4, 3, answer => {
-//   console.log('The answer is ' + answer) //should console.log 12
-// })
-
-
+// multiply(4, 4, displayAnswer)
 
 ////////// PROBLEMS 2 - 6 //////////
 
@@ -37,8 +33,16 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
   Then invoke the callback function, passing in the first element in the array as it's argument.
 */
 
-// CODE HERE 
+// function print(arg) {
+//   console.log(arg)
+// }
 
+function first(arr, callback) {
+  let n1 = arr[0];
+  callback(n1)
+}
+
+// first(['John', 'Jill', "Sally", 'Chad', 'Chris'], print)
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
@@ -57,8 +61,16 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
   Then invoke the callback, passing in the last element in the array as the argument.
 */
 
-// CODE HERE
+// function print(arg) {
+//   console.log(arg)
+// }
 
+function last(arr, callback) {
+  let n1 = arr[arr.length - 1];
+  callback(n1)
+}
+
+// last(['John', 'Jill', "Sally", 'Chad', 'Chris'], print)
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
@@ -79,12 +91,20 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
   If the name does not exist, invoke the callback with false as the argument.
 */
 
-// CODE HERE 
+function result(arg) {
+  if (arg === true) {
+    console.log('Name is in the array')
+  } else {
+    console.log('Name is not in the array')
+  }
+}
 
+function contains(array, item, callback) {
+  let trueFalse = array.includes(item);
+  callback(trueFalse)
+}
 
-// UNCOMMENT THE FUNCTION CALL BELOW
-// RUN THIS FILE WITH NODE
-// CHECK YOUR ANSWER
+// contains(['John', 'Jill', "Sally", 'Chad', 'Chris'], 'Sally', result)
 
 // contains(names, 'Colt', result => {
 //   if(result === true){
@@ -95,7 +115,6 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 // })
 
 
-
 ////////// PROBLEM 5 //////////
 
 /*
@@ -104,7 +123,17 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
   Hint: you can use a nested for loop to do this.
 */
 
-// CODE HERE
+// function print(arg) {
+//   console.log (... arg)
+// }
+
+function uniq (array, callback) {
+  let modArray = new Set(array);
+  callback(modArray)
+}
+
+// uniq (['John', 'Jill', "Sally", 'Chad', 'Chris', 'Chris', 'Jill'], print)
+
 
 /*
   Invoke the uniq function, passing in the names array from above and a callback function.
@@ -113,8 +142,16 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
   'The new names array with all the duplicate items removed is [UNIQARRPARAM].'
 */
 
-// CODE HERE
+function invoker(uniqArr) {
+  console.log (`The new names array with all the duplicate items removed is ${[...uniqArr]}.`)
+}
 
+function uniq (array, callback) {
+  let modArray = new Set(array);
+  callback(modArray)
+}
+
+// uniq (['John', 'Jill', "Sally", 'Chad', 'Chris', 'Chris', 'Jill'], invoker)
 
 
 ////////// PROBLEM 6 //////////
@@ -124,7 +161,18 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
   For each name in the array, invoke the callback and pass in the name and the name's index as arguments.
 */
 
-// CODE HERE 
+function printEach(item, index) {
+  console.log (`The item at ${[index]} is ${[item]}.`)
+}
+
+
+function each(array, callback) {
+  let item = 'mane'
+  let index = 'wassap'
+  callback(item, index)
+}
+
+// each (['John', 'Jill', "Sally", 'Chad', 'Chris'], printEach)
 
 
 /*
@@ -234,3 +282,7 @@ var users = [
 */
 
 // CODE HERE
+
+
+
+
