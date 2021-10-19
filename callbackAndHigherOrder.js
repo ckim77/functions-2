@@ -181,7 +181,7 @@ function printEach(item, place) {
   console.log(`The item at index ${place} is ${item}.`)
 }
 
-each (['John', 'Jill', "Sally", 'Chad', 'Chris'], printEach)
+// each (['John', 'Jill', "Sally", 'Chad', 'Chris'], printEach)
 
 ////////// PROBLEM 7 //////////
 
@@ -255,7 +255,8 @@ function getUserById(array, ID, callback) {
   the two parameters together and return the sum.
 */
 
-// CODE HERE
+const addingFactory = num1 => num2 => num1 + num2;
+// console.log(addingFactory(40)(20))
 
 /*
   Now that you have addingFactory, you can create other
@@ -269,7 +270,7 @@ function getUserById(array, ID, callback) {
   10 as an arguemnt.
 */
 
-// CODE HERE
+let addTen = addingFactory(10)
 
 /*
   Now the inner function is stored in the addTen variable! 
@@ -281,7 +282,8 @@ function getUserById(array, ID, callback) {
   to see the different outputs.
 */
 
-// CODE HERE
+// console.log(addTen(10))
+// console.log(addTen(40))
 
 /*
   Let's make another function from the addingFactory. 
@@ -294,8 +296,6 @@ function getUserById(array, ID, callback) {
   to add any number to your favorite number!
 */
 
-// CODE HERE
-
-
-
+let addNUMBER = addingFactory(777)
+/// console.log(addNUMBER(1))
 

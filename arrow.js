@@ -94,3 +94,17 @@ let compareNums = (a, b) => (a >= b ? a : b);
 
 let bestMovie = str => `${str} is the best movie ever!`;
 // console.log(bestMovie('No Time to Die'));
+
+
+// const array = [1, 4, 9, 16];
+
+// // const map1 = array.map(x => x * 2)
+
+// const newArr = array.map(multiplyTwo)
+
+// function multiplyTwo(x) {
+//   return x * 2
+// }
+
+// console.log(newArr)
+
