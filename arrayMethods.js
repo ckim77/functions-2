@@ -121,7 +121,7 @@ const purchases = [{"owner":"Barry","price":103},{"owner":"Bob","price":75},
 */
 
 
-const sumBobsTotal = purchases.filter(x => x.owner === 'Bob').map(y => y.price).reduce((a,b) => a + b);
+const sumBobsTotal = purchases.filter(x => x.owner === 'Bob').reduce((a,b) => a + b.price, 0);
 // console.log(sumBobsTotal);
 
 
