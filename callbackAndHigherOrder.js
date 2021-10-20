@@ -6,7 +6,7 @@
 */
 
 function displayAnswer(arg) {
-  console.log('The answer is ' + arg)
+  console.log('The answer is ' + arg + '.');
 }
 
 function multiply(n1, n2, myCallback) {
@@ -23,8 +23,6 @@ function multiply(n1, n2, myCallback) {
 // Do not edit the code below.
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 // Do not edit the code above.
-
-
 
 ////////// PROBLEM 2 //////////
 
