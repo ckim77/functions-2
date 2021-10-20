@@ -120,6 +120,7 @@ const purchases = [{"owner":"Barry","price":103},{"owner":"Bob","price":75},
   Use a high order method(s) to create to get the sum of bobsTotal.
 */
 
+
 const sumBobsTotal = purchases.filter(x => x.owner === 'Bob').map(y => y.price).reduce((a,b) => a + b);
 // console.log(sumBobsTotal);
 
@@ -132,6 +133,5 @@ const sumBobsTotal = purchases.filter(x => x.owner === 'Bob').map(y => y.price).
 // }
 
 //console.log(res.reduce(reducer));
-//const reducer = (accumulator, curr) => accumulator + curr;
 
 // sum = 891

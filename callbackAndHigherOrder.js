@@ -11,7 +11,7 @@ function displayAnswer(arg) {
 
 function multiply(n1, n2, myCallback) {
   let product = n1 * n2;
-  myCallback(product);
+  return myCallback(product);
 }
 
 // multiply(4, 4, displayAnswer)
@@ -37,7 +37,7 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 
 function first(arr, callback) {
   let n1 = arr[0];
-  callback(n1)
+  return callback(n1)
 }
 
 // first(['John', 'Jill', "Sally", 'Chad', 'Chris'], print)
@@ -65,7 +65,7 @@ function first(arr, callback) {
 
 function last(arr, callback) {
   let n1 = arr[arr.length - 1];
-  callback(n1)
+  return callback(n1)
 }
 
 // last(['John', 'Jill', "Sally", 'Chad', 'Chris'], print)
@@ -99,7 +99,7 @@ function result(arg) {
 
 function contains(array, item, callback) {
   let trueFalse = array.includes(item);
-  callback(trueFalse)
+  return callback(trueFalse)
 }
 
 // contains(['John', 'Jill', "Sally", 'Chad', 'Chris'], 'Sally', result)
@@ -127,7 +127,7 @@ function contains(array, item, callback) {
 
 function uniq (array, callback) {
   let modArray = new Set(array);
-  callback(modArray)
+  return callback(modArray)
 }
 
 // uniq (['John', 'Jill', "Sally", 'Chad', 'Chris', 'Chris', 'Jill'], print)
@@ -146,7 +146,7 @@ function invoker(uniqArr) {
 
 function uniq (array, callback) {
   let modArray = new Set(array);
-  callback(modArray)
+  return callback(modArray)
 }
 
 // uniq (['John', 'Jill', "Sally", 'Chad', 'Chris', 'Chris', 'Jill'], invoker)
@@ -164,7 +164,7 @@ function each(array, callback) {
 for (i = 0; i < array.length; i++) {
     let res = array[i];
     let index = array.indexOf(array[i])
-    callback(res, index)
+    return callback(res, index)
   }
 }
 
@@ -224,7 +224,7 @@ function getUserById(array, ID, callback) {
   if (array.some(array => array['id'] === ID)) {
     res = array.find(array => array['id'] === ID)
   }
-  callback(res)
+  return callback(res)
 }
 
 // getUserById (users, '16t', printInfo)
